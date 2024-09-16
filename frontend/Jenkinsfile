@@ -33,7 +33,7 @@ pipeline {
             }
         }
 
-        stage (deploy the container) {
+        stage ('deploy the container') {
             steps {
                 sh 'docker container run -dt --name e-com-fe -p 80:80 prasanthrk/e-comm-frontend '
             }
