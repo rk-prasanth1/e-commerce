@@ -1,5 +1,5 @@
 # Stage 1: Build the frontend app
-FROM node:18-alpine as build
+FROM node:18-alpine AS build
 WORKDIR /app
 
 # Copy the package.json and package-lock.json (if present)
