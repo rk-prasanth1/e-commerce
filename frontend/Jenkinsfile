@@ -23,19 +23,19 @@ pipeline {
 
         stage ('docker image push to docker hub') {
             steps {
-                sh 'docker push prasanthrk/e-comm-frontend'
+                sh 'sudo docker push prasanthrk/e-comm-frontend'
             }
         }
 
         stage ('remove old image') {
             steps {
-                sh 'docker image rm prasanthrk/e-comm-frontend'
+                sh 'sudo docker image rm prasanthrk/e-comm-frontend'
             }
         }
 
         stage ('deploy the container') {
             steps {
-                sh 'docker container run -dt --name e-com-fe -p 80:80 prasanthrk/e-comm-frontend '
+                sh 'sudo docker container run -dt --name e-com-fe -p 80:80 prasanthrk/e-comm-frontend '
             }
         }
 
