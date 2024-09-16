@@ -1,0 +1,18 @@
+pipeline {
+    agent any
+    environment {
+        DOCKERHUB_CREDENTIALS = credentials('DockerHub-ID')
+        registry = "prasanthrk/e-comm-frontend"
+        registrycredentials = 'DockerHUB-ID'
+        dockerimage = ''
+
+    }
+
+    stages {
+        stage ('docker image build') {
+            steps {
+                sh 'docker build -t prasanthrk/e-comm-frontend .'
+            }
+        }
+    }
+}
