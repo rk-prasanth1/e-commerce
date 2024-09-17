@@ -20,7 +20,7 @@ FROM nginx:alpine
 # Copy the build output from the first stage to Nginx’s html directory
 COPY --from=build /app/build /usr/share/nginx/html
 
-# Expose port 80
+# Expose port 80.
 EXPOSE 80
 
 # Run Nginx in the foreground
